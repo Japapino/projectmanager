@@ -11,7 +11,7 @@ class App extends Component {
     }
   }
 
-  ComponentWillMount(){ //lifecycle method, runs at begining. Use also for ajax calls
+  componentWillMount(){ //lifecycle method, runs at begining. Use also for ajax calls
     this.setState({projects: [
         {
           title: 'Business Website', 
