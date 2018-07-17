@@ -23,7 +23,8 @@ class AddProject extends Component {
   				title: this.refs.title.value, 
   				category: this.refs.category.value
   			}}, function(){
-  				console.log(this.state); 
+  				// console.log(this.state); 
+  				this.props.addProject(this.state.newProject); 
   			})
   		}
   		e.preventDefault(); //prevents form from submitting
@@ -31,7 +32,7 @@ class AddProject extends Component {
 
   	render() {
   		let categoryOptions = this.props.categories.map(category => {
-  			return <option key={category} value="category">{category}</option>
+  			return <option key={category} value={category}>{category}</option>
   		});
 
 
@@ -48,6 +49,7 @@ class AddProject extends Component {
     			<label>Category</label> <br />
     			<select ref="category"> {categoryOptions} </select>
     		</div>
+    		<br />
     	<input type="submit" value="Submit" />
     	</form>
       </div> 

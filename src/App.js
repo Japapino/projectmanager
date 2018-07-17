@@ -7,9 +7,7 @@ class App extends Component {
   constructor() {
     super(); 
     this.state = {
-      projects: [
-
-      ]
+      projects: []
     }
   }
 
@@ -30,10 +28,18 @@ class App extends Component {
       ]})
   }
 
+  //adds new project to state
+  handleAddProject(project){
+    // console.log(project); 
+    let projects = this.state.projects;
+    projects.push(project);
+    this.setState({Projects:projects}) //reset state
+  }
+
   render() {
     return (
       <div className="App">
-        <AddProject />
+        <AddProject addProject={this.handleAddProject.bind(this)} />
         <Projects projects={this.state.projects} />
       </div> 
     );

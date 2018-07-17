@@ -4,17 +4,18 @@ import ProjectItem from './ProjectItem';
 class App extends Component {
 
   	render() {
-  			let projectItems; 
+  	let projectItems; 
 	if(this.props.projects) {
 		projectItems = this.props.projects.map(project => {
 			// console.log(project); 
 			return (
 				<ProjectItem key={project.title} project={project} />
-			)
+			);
 		}); 
 	}
     return (
     	<div className="Projects">
+    	<h3>Latest Projects</h3>
     	{projectItems}
       </div> 
     );
