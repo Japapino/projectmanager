@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types'; 
 
 
 class ProjectItem extends Component {
@@ -16,6 +17,12 @@ class ProjectItem extends Component {
       </li> 
     );
   }
+}
+
+//validation
+ProjectItem.propTypes = {
+	project: PropTypes.object,
+	onDelete: PropTypes.func
 }
 
 export default ProjectItem;
